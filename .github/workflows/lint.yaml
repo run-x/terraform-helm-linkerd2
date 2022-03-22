@@ -30,29 +30,25 @@ jobs:
       - uses: reviewdog/action-tflint@master
         with:
           github_token: ${{ secrets.github_token }}
-  # Finds Security Vulnerabilities and adds comments to the PR
+  # Finds Security Vulnerabilities
   tfsec:
-    name: tfsec
+    name: tfsec sarif report
     runs-on: ubuntu-latest
+
     steps:
-      - uses: reviewdog/action-setup@v1
+      - name: Clone repo
+        uses: actions/checkout@master
+
+      - name: tfsec
+        uses: tfsec/tfsec-sarif-action@master
         with:
-          reviewdog_version: latest
-      - uses: actions/checkout@v2
-      - uses: aquasecurity/tfsec-pr-commenter-action@main
+          sarif_file: tfsec.sarif          
+
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v1
         with:
-          github_token: ${{ github.token }}
-      - name: Run tfsec with reviewdog output on the PR
-        uses: reviewdog/action-tfsec@master
-        with:
-          github_token: ${{ secrets.github_token }}
-          working_directory: . # Change working directory
-          level: info # Get more output from reviewdog
-          reporter: github-pr-review # Change reviewdog reporter
-          filter_mode: nofilter # Check all files, not just the diff
-          fail_on_error: true # Fail action if errors are found
-          flags: -tee # Add debug flag to reviewdog
-          tfsec_flags: "" # Optional
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: tfsec.sarif   
   # Checks for spelling errors
   misspell:
     name: misspell
