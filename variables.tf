@@ -6,7 +6,7 @@ variable "high_availability" {
 
 variable "chart_version" {
   type        = string
-  description = "Specify the exact Linkerd chart version to install. If this is not specified, the latest version is installed."
+  description = "Specify the exact Linkerd chart version to install."
   default     = "2.11.1"
 }
 
