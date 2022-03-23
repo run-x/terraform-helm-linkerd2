@@ -70,7 +70,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_cert_validity_period_hours"></a> [cert\_validity\_period\_hours](#input\_cert\_validity\_period\_hours) | The number of hours after initial issuing that the certificate will become invalid. | `number` | `8760` | no |
-| <a name="input_chart_version"></a> [chart\_version](#input\_chart\_version) | Specify the exact Linkerd chart version to install. If this is not specified, the latest version is installed. | `string` | `null` | no |
+| <a name="input_chart_version"></a> [chart\_version](#input\_chart\_version) | Specify the exact Linkerd chart version to install. | `string` | `"2.11.1"` | no |
 | <a name="input_high_availability"></a> [high\_availability](#input\_high\_availability) | Install Linkerd in high availability (HA) mode | `bool` | `false` | no |
 | <a name="input_values"></a> [values](#input\_values) | List of values in raw yaml to pass to helm. Values will be merged, in order, as Helm does with multiple -f options. Example: ["enablePodAntiAffinity: false"] | `list(string)` | `[]` | no |
 | <a name="input_viz_enabled"></a> [viz\_enabled](#input\_viz\_enabled) | Install Linkerd-Viz: extension contains observability and visualization components | `bool` | `false` | no |
