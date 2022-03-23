@@ -1,4 +1,15 @@
 # terraform-helm-linkerd2
+
+[![](https://img.shields.io/github/license/run-x/terraform-helm-linkerd2)](https://github.com/run-x/terraform-helm-linkerd2)
+![](https://img.shields.io/github/v/tag/run-x/terraform-helm-linkerd2)
+![](https://img.shields.io/github/issues/run-x/terraform-helm-linkerd2)
+![](https://img.shields.io/github/issues-closed/run-x/terraform-helm-linkerd2)
+[![](https://img.shields.io/github/languages/code-size/run-x/terraform-helm-linkerd2)](https://github.com/run-x/terraform-helm-linkerd2)
+[![](https://img.shields.io/github/repo-size/run-x/terraform-helm-linkerd2)](https://github.com/run-x/terraform-helm-linkerd2)
+![](https://img.shields.io/github/languages/top/run-x/terraform-helm-linkerd2?color=green&logo=terraform&logoColor=blue)
+![](https://img.shields.io/github/commit-activity/m/run-x/terraform-helm-linkerd2)
+![](https://img.shields.io/github/last-commit/run-x/terraform-helm-linkerd2)
+
 Install Linkerd2 using Terraform
 - Install Linkerd2 using Helm
 - Configure Control Plane TLS Credentials ([this](https://linkerd.io/2.11/tasks/manually-rotating-control-plane-tls-credentials/#))
@@ -16,7 +27,9 @@ provider "helm" {
 
 # install linkerd2 in high availability (HA) mode with Linkerd Viz 
 module "linkerd2" {
-  source            = "run-x/terraform-helm-linkerd2"
+  source  = "run-x/linkerd2/helm"
+  version = "0.1.1"
+
   high_availability = true
   viz_enabled       = true
   values            = ["enablePodAntiAffinity: false"]
