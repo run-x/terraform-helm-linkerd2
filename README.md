@@ -3,7 +3,6 @@
 [![](https://img.shields.io/github/license/run-x/terraform-helm-linkerd2)](https://github.com/run-x/terraform-helm-linkerd2)
 ![](https://img.shields.io/github/v/tag/run-x/terraform-helm-linkerd2)
 ![](https://img.shields.io/github/issues/run-x/terraform-helm-linkerd2)
-![](https://img.shields.io/github/issues-closed/run-x/terraform-helm-linkerd2)
 [![](https://img.shields.io/github/languages/code-size/run-x/terraform-helm-linkerd2)](https://github.com/run-x/terraform-helm-linkerd2)
 [![](https://img.shields.io/github/repo-size/run-x/terraform-helm-linkerd2)](https://github.com/run-x/terraform-helm-linkerd2)
 ![](https://img.shields.io/github/languages/top/run-x/terraform-helm-linkerd2?color=green&logo=terraform&logoColor=blue)
